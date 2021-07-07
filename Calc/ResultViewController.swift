@@ -3,7 +3,7 @@
 //  Calc
 //
 //  Created by matsui on 2021/07/07.
-//
+
 
 import UIKit
 
@@ -18,6 +18,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         let percentValue = Float(percent)/100
         let waribikiPrice = Float(price)*percentValue
         let percentOfPrice = price - Int(waribikiPrice)
