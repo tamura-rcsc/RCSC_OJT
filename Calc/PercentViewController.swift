@@ -40,12 +40,15 @@ class PercentViewController: UIViewController {
             percentField.text="\(percent)"
         }
     }
+
+    
     @IBAction func tap4Button(_ sender: Any) {
         let value = percentField.text!+"4"
         if let percent = Int(value){
             percentField.text="\(percent)"
         }
     }
+    
     @IBAction func tap5Button(_ sender: Any) {
         let value = percentField.text!+"5"
         if let percent = Int(value){
@@ -85,6 +88,28 @@ class PercentViewController: UIViewController {
     @IBAction func tapcButton(_ sender: Any) {
         percentField.text="0"
     }
+    
+    @IBAction func tapToResult(_ sender: Any) {
+        let percent = Int(percentField.text!)
+        if percent == 0{
+            displayAlert()
+        }else{
+            performSegue(withIdentifier: "toResult", sender: nil)
+        }
+    }
+    
+    
+    func displayAlert() {
+            let title = "0で割れません"
+            let message = "数値を記入してください"
+            let okText = "ok"
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(okayButton)
+
+            present(alert, animated: true, completion: nil)
+        }
     
     override func prepare(for segue: UIStoryboardSegue,sender:Any?){
         let viewController = segue.destination as! ResultViewController

@@ -52,7 +52,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="tap4Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S0Y-Sa-cEf"/>
                                     <action selector="tap5Button:" destination="AQK-lF-zYu" eventType="touchUpInside" id="HKl-n5-dfl"/>
                                 </connections>
                             </button>
@@ -70,8 +69,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4"/>
                                 <connections>
-                                    <action selector="tap3button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lY2-AH-3VV"/>
-                                    <action selector="tap4Button:" destination="AQK-lF-zYu" eventType="touchUpInside" id="9kF-Id-xT4"/>
+                                    <action selector="tap4Button:" destination="AQK-lF-zYu" eventType="touchUpInside" id="aXr-F1-wxb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-u7-Cyr">
@@ -133,7 +131,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="計算する"/>
                                 <connections>
-                                    <segue destination="8g1-xF-58y" kind="modal" id="8db-hx-nlO"/>
+                                    <action selector="tapToResult:" destination="AQK-lF-zYu" eventType="touchUpInside" id="8tE-hD-DSD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,6 +140,7 @@
                     </view>
                     <connections>
                         <outlet property="percentField" destination="yLG-Gm-PU7" id="uxc-Ig-Bpg"/>
+                        <segue destination="8g1-xF-58y" kind="modal" identifier="toResult" id="Oj4-Aw-zhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qt-t1-Boh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,12 +187,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEa-Zl-lyR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="YLd-A0-cUf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="94"/>
+            <point key="canvasLocation" x="1455" y="94"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toPercent" id="BYZ-38-t0r" customClass="ViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,7 +231,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="tap4Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlS-CK-DH0"/>
+                                    <action selector="tap5Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAL-6g-HB7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4M-5x-PTM">
@@ -248,7 +247,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4"/>
                                 <connections>
-                                    <action selector="tap3button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzi-To-qaL"/>
+                                    <action selector="tap4Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sx0-O7-1Qq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-fx-2XN">
@@ -312,7 +311,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="割引・％を入力する"/>
                                 <connections>
-                                    <segue destination="AQK-lF-zYu" kind="modal" id="jxl-Ks-drk"/>
+                                    <action selector="tapToPercent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KhU-iF-fjK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,6 +320,7 @@
                     </view>
                     <connections>
                         <outlet property="priceField" destination="cJ3-pR-WMl" id="yir-l0-FjR"/>
+                        <segue destination="AQK-lF-zYu" kind="modal" identifier="toPercent" id="Ern-lg-VID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

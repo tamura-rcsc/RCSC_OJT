@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var priceField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func tap4button(_ sender: Any) {
+    @IBAction func tap4Button(_ sender: Any) {
         let value = priceField.text! + "4"
         if let price = Int(value){
             priceField.text = "\(price)"
@@ -50,6 +51,8 @@ class ViewController: UIViewController {
             priceField.text = "\(price)"
         }
     }
+    
+
     
     @IBAction func tap6Button(_ sender: Any) {
         let value = priceField.text! + "6"
@@ -100,6 +103,32 @@ class ViewController: UIViewController {
     @IBAction func restart(_segue: UIStoryboardSegue){
         priceField.text="0"
     }
+    
+    
+    @IBAction func tapToPercent(_ sender: Any) {
+        let priceFieldInt = Int(priceField.text!)
+        if priceFieldInt==0{
+            //self.dismiss(animated: true, completion: nil)
+            displayAlert()
+        }else{
+            performSegue(withIdentifier: "toPercent", sender: nil)
+        }
+        
+    }
+    
+    func displayAlert() {
+            let title = "0は割れません"
+            let message = "数値を記入してください"
+            let okText = "ok"
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(okayButton)
+
+            present(alert, animated: true, completion: nil)
+        }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue,sender: Any?){
         let viewController = segue.destination as! PercentViewController
